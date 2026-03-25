@@ -101,7 +101,17 @@ const btnToJson = document.getElementById("btnToJson");
 
 const btnPoke = document.getElementById("btnPoke");
 btnPoke.addEventListener("click", async () => {
- const json = await res.json();
+  const text = document.getElementById("input").value;
+
+  const res = await fetch("/convertPokemon", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ data: text })
+  });
+
+  const json = await res.json();
   console.log(json);
 
   //Crear imagen
