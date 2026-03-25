@@ -1,6 +1,5 @@
 const express = require("express");
 const convert = require("xml-js");
-const fetch = require("node-fetch");
 
 const app = express();
 const PORT = 3000;

@@ -82,6 +82,7 @@ btnToXML.addEventListener("click", async() => {
   document.getElementById("output").value = xml;*/
 });
 
+// Botón convertir XML a JSON
 const btnToJson = document.getElementById("btnToJson");
 
   btnToJson.addEventListener("click", async () => {
@@ -99,9 +100,10 @@ const btnToJson = document.getElementById("btnToJson");
 
   });
 
+// Botón convertir PokeApi
 const btnPoke = document.getElementById("btnPoke");
 btnPoke.addEventListener("click", async () => {
-  const text = document.getElementById("input").value;
+  const text = document.getElementById("input").value.toLowerCase().trim();
 
   const res = await fetch("/convertPokemon", {
     method: "POST",
